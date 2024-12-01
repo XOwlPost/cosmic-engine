@@ -1,0 +1,5 @@
+fabric==2.6.0           # Core library for remote execution and automation
+btrfs-progs-python      # Python wrapper for Btrfs utilities (if available)
+requests                # For sending alerts or webhook notifications
+jsonschema              # For validating JSON configurations
+python-dotenv           # For managing environment variables
