@@ -1,0 +1,4 @@
+{
+    "btrfs_volume_path": "/mnt/t7shield",
+    "snapshot_retain_count": 5
+}
