@@ -5,7 +5,7 @@ from fabric import task
 @task
 def setup_ssh(c, env=None):
     # Load configuration
-    config_file = "config.json"
+    config_file = os.path.join("config", "ssh_config.json")
     if not os.path.exists(config_file):
         print(f"Configuration file {config_file} not found.")
         return

@@ -60,6 +60,8 @@ def auto_format_message(message):
         return f"docs: {message}"
     elif "test" in message.lower():
         return f"test: {message}"
+    elif "initial" in message.lower() and "commit" in message.lower():
+        return "chore: Initial commit"
     return None
 
 @task

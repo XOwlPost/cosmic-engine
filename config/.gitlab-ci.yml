@@ -1,0 +1,25 @@
+stages:
+  - build
+
+variables:
+  DOCKER_DRIVER: overlay2
+
+build_and_push:
+  stage: build
+  image: docker:20.10.7
+  services:
+    - docker:20.10.7-dind
+
+  before_script:
+    - docker login -u "$CI_REGISTRY_USER" -p "$CI_REGISTRY_PASSWORD" $CI_REGISTRY
+
+  script:
+    - chmod +x ./build-and-push.sh
+    - ./build-and-push.sh xowlpost/glibc "$CI_COMMIT_TAG" "linux/amd64,linux/arm64"
+
+  after_script:
+    - docker buildx imagetools inspect xowlpost/glibc:$CI_COMMIT_TAG
+
+  only:
+    - tags
+
