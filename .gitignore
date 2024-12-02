@@ -1,3 +1,21 @@
+# Ignore SSH-related sensitive directories and files
+~/.ssh
+
+# Ignore compiled Python files
+__pycache__/
+*.pyc
+
+# Ignore environment configuration files
+config/*.json
+
+# Ignore virtual environment folders
+venv/
+.env/
+
+# Ignore Docker-related files
+*.log
+docker-compose.override.yml
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
